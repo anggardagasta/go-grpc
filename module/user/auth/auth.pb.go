@@ -70,6 +70,8 @@ type ValidateAccessTokenResponse struct {
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
 	Role          string                 `protobuf:"bytes,3,opt,name=role,proto3" json:"role,omitempty"`
+	Phone         string                 `protobuf:"bytes,4,opt,name=phone,proto3" json:"phone,omitempty"`
+	Name          string                 `protobuf:"bytes,5,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -125,17 +127,33 @@ func (x *ValidateAccessTokenResponse) GetRole() string {
 	return ""
 }
 
+func (x *ValidateAccessTokenResponse) GetPhone() string {
+	if x != nil {
+		return x.Phone
+	}
+	return ""
+}
+
+func (x *ValidateAccessTokenResponse) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
 var File_module_user_auth_auth_proto protoreflect.FileDescriptor
 
 const file_module_user_auth_auth_proto_rawDesc = "" +
 	"\n" +
 	"\x1bmodule/user/auth/auth.proto\x12\fuser_service\"?\n" +
 	"\x1aValidateAccessTokenRequest\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"`\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"\x8a\x01\n" +
 	"\x1bValidateAccessTokenResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x12\n" +
-	"\x04role\x18\x03 \x01(\tR\x04role2y\n" +
+	"\x04role\x18\x03 \x01(\tR\x04role\x12\x14\n" +
+	"\x05phone\x18\x04 \x01(\tR\x05phone\x12\x12\n" +
+	"\x04name\x18\x05 \x01(\tR\x04name2y\n" +
 	"\vUserService\x12j\n" +
 	"\x13ValidateAccessToken\x12(.user_service.ValidateAccessTokenRequest\x1a).user_service.ValidateAccessTokenResponseB\x10Z\x0e./user_serviceb\x06proto3"
 
