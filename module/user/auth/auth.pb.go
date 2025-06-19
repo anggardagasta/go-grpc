@@ -4,7 +4,7 @@
 // 	protoc        v5.29.3
 // source: module/user/auth/auth.proto
 
-package user_service
+package auth
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -145,7 +145,7 @@ var File_module_user_auth_auth_proto protoreflect.FileDescriptor
 
 const file_module_user_auth_auth_proto_rawDesc = "" +
 	"\n" +
-	"\x1bmodule/user/auth/auth.proto\x12\fuser_service\"?\n" +
+	"\x1bmodule/user/auth/auth.proto\x12\tuser.auth\"?\n" +
 	"\x1aValidateAccessTokenRequest\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"\x8a\x01\n" +
 	"\x1bValidateAccessTokenResponse\x12\x17\n" +
@@ -153,9 +153,9 @@ const file_module_user_auth_auth_proto_rawDesc = "" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x12\n" +
 	"\x04role\x18\x03 \x01(\tR\x04role\x12\x14\n" +
 	"\x05phone\x18\x04 \x01(\tR\x05phone\x12\x12\n" +
-	"\x04name\x18\x05 \x01(\tR\x04name2y\n" +
-	"\vUserService\x12j\n" +
-	"\x13ValidateAccessToken\x12(.user_service.ValidateAccessTokenRequest\x1a).user_service.ValidateAccessTokenResponseB\x10Z\x0e./user_serviceb\x06proto3"
+	"\x04name\x18\x05 \x01(\tR\x04name2s\n" +
+	"\vAuthService\x12d\n" +
+	"\x13ValidateAccessToken\x12%.user.auth.ValidateAccessTokenRequest\x1a&.user.auth.ValidateAccessTokenResponseB&Z$go-grpc/proto/user-service/user;authb\x06proto3"
 
 var (
 	file_module_user_auth_auth_proto_rawDescOnce sync.Once
@@ -171,12 +171,12 @@ func file_module_user_auth_auth_proto_rawDescGZIP() []byte {
 
 var file_module_user_auth_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_module_user_auth_auth_proto_goTypes = []any{
-	(*ValidateAccessTokenRequest)(nil),  // 0: user_service.ValidateAccessTokenRequest
-	(*ValidateAccessTokenResponse)(nil), // 1: user_service.ValidateAccessTokenResponse
+	(*ValidateAccessTokenRequest)(nil),  // 0: user.auth.ValidateAccessTokenRequest
+	(*ValidateAccessTokenResponse)(nil), // 1: user.auth.ValidateAccessTokenResponse
 }
 var file_module_user_auth_auth_proto_depIdxs = []int32{
-	0, // 0: user_service.UserService.ValidateAccessToken:input_type -> user_service.ValidateAccessTokenRequest
-	1, // 1: user_service.UserService.ValidateAccessToken:output_type -> user_service.ValidateAccessTokenResponse
+	0, // 0: user.auth.AuthService.ValidateAccessToken:input_type -> user.auth.ValidateAccessTokenRequest
+	1, // 1: user.auth.AuthService.ValidateAccessToken:output_type -> user.auth.ValidateAccessTokenResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

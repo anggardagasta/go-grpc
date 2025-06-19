@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package user.user;
+
+option go_package = "go-grpc/proto/user-service/user;user";
+
+message FindUserRequest {
+  string user_id = 1;
+}
+
+message FindUserResponse {
+  string user_id = 1;
+  string email = 2;
+  string role = 3;
+  string phone = 4;
+  string name = 5;
+}
+
+service UserService {
+  rpc FindUser (FindUserRequest) returns (FindUserResponse);
+}
