@@ -67,7 +67,7 @@ func (x *ValidateStockRequest) GetBookId() string {
 
 type ValidateStockResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Stock         string                 `protobuf:"bytes,1,opt,name=stock,proto3" json:"stock,omitempty"`
+	Stock         int64                  `protobuf:"varint,1,opt,name=stock,proto3" json:"stock,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -102,11 +102,11 @@ func (*ValidateStockResponse) Descriptor() ([]byte, []int) {
 	return file_module_book_book_book_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ValidateStockResponse) GetStock() string {
+func (x *ValidateStockResponse) GetStock() int64 {
 	if x != nil {
 		return x.Stock
 	}
-	return ""
+	return 0
 }
 
 type IncreaseStockRequest struct {
@@ -155,7 +155,7 @@ func (x *IncreaseStockRequest) GetBookId() string {
 
 type IncreaseStockResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Stock         string                 `protobuf:"bytes,1,opt,name=stock,proto3" json:"stock,omitempty"`
+	Stock         int64                  `protobuf:"varint,1,opt,name=stock,proto3" json:"stock,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -190,11 +190,11 @@ func (*IncreaseStockResponse) Descriptor() ([]byte, []int) {
 	return file_module_book_book_book_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *IncreaseStockResponse) GetStock() string {
+func (x *IncreaseStockResponse) GetStock() int64 {
 	if x != nil {
 		return x.Stock
 	}
-	return ""
+	return 0
 }
 
 type DecreaseStockRequest struct {
@@ -243,7 +243,7 @@ func (x *DecreaseStockRequest) GetBookId() string {
 
 type DecreaseStockResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Stock         string                 `protobuf:"bytes,1,opt,name=stock,proto3" json:"stock,omitempty"`
+	Stock         int64                  `protobuf:"varint,1,opt,name=stock,proto3" json:"stock,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -278,11 +278,11 @@ func (*DecreaseStockResponse) Descriptor() ([]byte, []int) {
 	return file_module_book_book_book_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *DecreaseStockResponse) GetStock() string {
+func (x *DecreaseStockResponse) GetStock() int64 {
 	if x != nil {
 		return x.Stock
 	}
-	return ""
+	return 0
 }
 
 var File_module_book_book_book_proto protoreflect.FileDescriptor
@@ -293,15 +293,15 @@ const file_module_book_book_book_proto_rawDesc = "" +
 	"\x14ValidateStockRequest\x12\x17\n" +
 	"\abook_id\x18\x01 \x01(\tR\x06bookId\"-\n" +
 	"\x15ValidateStockResponse\x12\x14\n" +
-	"\x05stock\x18\x01 \x01(\tR\x05stock\"/\n" +
+	"\x05stock\x18\x01 \x01(\x03R\x05stock\"/\n" +
 	"\x14IncreaseStockRequest\x12\x17\n" +
 	"\abook_id\x18\x01 \x01(\tR\x06bookId\"-\n" +
 	"\x15IncreaseStockResponse\x12\x14\n" +
-	"\x05stock\x18\x01 \x01(\tR\x05stock\"/\n" +
+	"\x05stock\x18\x01 \x01(\x03R\x05stock\"/\n" +
 	"\x14DecreaseStockRequest\x12\x17\n" +
 	"\abook_id\x18\x01 \x01(\tR\x06bookId\"-\n" +
 	"\x15DecreaseStockResponse\x12\x14\n" +
-	"\x05stock\x18\x01 \x01(\tR\x05stock2\x89\x02\n" +
+	"\x05stock\x18\x01 \x01(\x03R\x05stock2\x89\x02\n" +
 	"\vBookService\x12R\n" +
 	"\rValidateStock\x12\x1f.book.book.ValidateStockRequest\x1a .book.book.ValidateStockResponse\x12R\n" +
 	"\rIncreaseStock\x12\x1f.book.book.IncreaseStockRequest\x1a .book.book.IncreaseStockResponse\x12R\n" +
