@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package book.book;
+
+option go_package = "github.com/anggardagasta/go-grpc/proto/syn-book-service/book;book";
+
+message ValidateStockRequest {
+  string book_id = 1;
+}
+
+message ValidateStockResponse {
+  string stock = 1;
+}
+
+message IncreaseStockRequest {
+  string book_id = 1;
+}
+
+message IncreaseStockResponse {
+  string stock = 1;
+}
+
+message DecreaseStockRequest {
+  string book_id = 1;
+}
+
+message DecreaseStockResponse {
+  string stock = 1;
+}
+
+service UserService {
+  rpc ValidateStock (ValidateStockRequest) returns (ValidateStockResponse);
+  rpc IncreaseStock (IncreaseStockRequest) returns (IncreaseStockResponse);
+  rpc DecreaseStock (DecreaseStockRequest) returns (DecreaseStockResponse);
+}
