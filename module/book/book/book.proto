@@ -28,7 +28,7 @@ message DecreaseStockResponse {
   string stock = 1;
 }
 
-service UserService {
+service BookService {
   rpc ValidateStock (ValidateStockRequest) returns (ValidateStockResponse);
   rpc IncreaseStock (IncreaseStockRequest) returns (IncreaseStockResponse);
   rpc DecreaseStock (DecreaseStockRequest) returns (DecreaseStockResponse);

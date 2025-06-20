@@ -19,177 +19,177 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	UserService_ValidateStock_FullMethodName = "/book.book.UserService/ValidateStock"
-	UserService_IncreaseStock_FullMethodName = "/book.book.UserService/IncreaseStock"
-	UserService_DecreaseStock_FullMethodName = "/book.book.UserService/DecreaseStock"
+	BookService_ValidateStock_FullMethodName = "/book.book.BookService/ValidateStock"
+	BookService_IncreaseStock_FullMethodName = "/book.book.BookService/IncreaseStock"
+	BookService_DecreaseStock_FullMethodName = "/book.book.BookService/DecreaseStock"
 )
 
-// UserServiceClient is the client API for UserService service.
+// BookServiceClient is the client API for BookService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type UserServiceClient interface {
+type BookServiceClient interface {
 	ValidateStock(ctx context.Context, in *ValidateStockRequest, opts ...grpc.CallOption) (*ValidateStockResponse, error)
 	IncreaseStock(ctx context.Context, in *IncreaseStockRequest, opts ...grpc.CallOption) (*IncreaseStockResponse, error)
 	DecreaseStock(ctx context.Context, in *DecreaseStockRequest, opts ...grpc.CallOption) (*DecreaseStockResponse, error)
 }
 
-type userServiceClient struct {
+type bookServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
-	return &userServiceClient{cc}
+func NewBookServiceClient(cc grpc.ClientConnInterface) BookServiceClient {
+	return &bookServiceClient{cc}
 }
 
-func (c *userServiceClient) ValidateStock(ctx context.Context, in *ValidateStockRequest, opts ...grpc.CallOption) (*ValidateStockResponse, error) {
+func (c *bookServiceClient) ValidateStock(ctx context.Context, in *ValidateStockRequest, opts ...grpc.CallOption) (*ValidateStockResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ValidateStockResponse)
-	err := c.cc.Invoke(ctx, UserService_ValidateStock_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, BookService_ValidateStock_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) IncreaseStock(ctx context.Context, in *IncreaseStockRequest, opts ...grpc.CallOption) (*IncreaseStockResponse, error) {
+func (c *bookServiceClient) IncreaseStock(ctx context.Context, in *IncreaseStockRequest, opts ...grpc.CallOption) (*IncreaseStockResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(IncreaseStockResponse)
-	err := c.cc.Invoke(ctx, UserService_IncreaseStock_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, BookService_IncreaseStock_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) DecreaseStock(ctx context.Context, in *DecreaseStockRequest, opts ...grpc.CallOption) (*DecreaseStockResponse, error) {
+func (c *bookServiceClient) DecreaseStock(ctx context.Context, in *DecreaseStockRequest, opts ...grpc.CallOption) (*DecreaseStockResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(DecreaseStockResponse)
-	err := c.cc.Invoke(ctx, UserService_DecreaseStock_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, BookService_DecreaseStock_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// UserServiceServer is the server API for UserService service.
-// All implementations must embed UnimplementedUserServiceServer
+// BookServiceServer is the server API for BookService service.
+// All implementations must embed UnimplementedBookServiceServer
 // for forward compatibility.
-type UserServiceServer interface {
+type BookServiceServer interface {
 	ValidateStock(context.Context, *ValidateStockRequest) (*ValidateStockResponse, error)
 	IncreaseStock(context.Context, *IncreaseStockRequest) (*IncreaseStockResponse, error)
 	DecreaseStock(context.Context, *DecreaseStockRequest) (*DecreaseStockResponse, error)
-	mustEmbedUnimplementedUserServiceServer()
+	mustEmbedUnimplementedBookServiceServer()
 }
 
-// UnimplementedUserServiceServer must be embedded to have
+// UnimplementedBookServiceServer must be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedUserServiceServer struct{}
+type UnimplementedBookServiceServer struct{}
 
-func (UnimplementedUserServiceServer) ValidateStock(context.Context, *ValidateStockRequest) (*ValidateStockResponse, error) {
+func (UnimplementedBookServiceServer) ValidateStock(context.Context, *ValidateStockRequest) (*ValidateStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateStock not implemented")
 }
-func (UnimplementedUserServiceServer) IncreaseStock(context.Context, *IncreaseStockRequest) (*IncreaseStockResponse, error) {
+func (UnimplementedBookServiceServer) IncreaseStock(context.Context, *IncreaseStockRequest) (*IncreaseStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IncreaseStock not implemented")
 }
-func (UnimplementedUserServiceServer) DecreaseStock(context.Context, *DecreaseStockRequest) (*DecreaseStockResponse, error) {
+func (UnimplementedBookServiceServer) DecreaseStock(context.Context, *DecreaseStockRequest) (*DecreaseStockResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DecreaseStock not implemented")
 }
-func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
-func (UnimplementedUserServiceServer) testEmbeddedByValue()                     {}
+func (UnimplementedBookServiceServer) mustEmbedUnimplementedBookServiceServer() {}
+func (UnimplementedBookServiceServer) testEmbeddedByValue()                     {}
 
-// UnsafeUserServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to UserServiceServer will
+// UnsafeBookServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to BookServiceServer will
 // result in compilation errors.
-type UnsafeUserServiceServer interface {
-	mustEmbedUnimplementedUserServiceServer()
+type UnsafeBookServiceServer interface {
+	mustEmbedUnimplementedBookServiceServer()
 }
 
-func RegisterUserServiceServer(s grpc.ServiceRegistrar, srv UserServiceServer) {
-	// If the following call pancis, it indicates UnimplementedUserServiceServer was
+func RegisterBookServiceServer(s grpc.ServiceRegistrar, srv BookServiceServer) {
+	// If the following call pancis, it indicates UnimplementedBookServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&UserService_ServiceDesc, srv)
+	s.RegisterService(&BookService_ServiceDesc, srv)
 }
 
-func _UserService_ValidateStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _BookService_ValidateStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ValidateStockRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).ValidateStock(ctx, in)
+		return srv.(BookServiceServer).ValidateStock(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_ValidateStock_FullMethodName,
+		FullMethod: BookService_ValidateStock_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).ValidateStock(ctx, req.(*ValidateStockRequest))
+		return srv.(BookServiceServer).ValidateStock(ctx, req.(*ValidateStockRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_IncreaseStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _BookService_IncreaseStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(IncreaseStockRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).IncreaseStock(ctx, in)
+		return srv.(BookServiceServer).IncreaseStock(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_IncreaseStock_FullMethodName,
+		FullMethod: BookService_IncreaseStock_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).IncreaseStock(ctx, req.(*IncreaseStockRequest))
+		return srv.(BookServiceServer).IncreaseStock(ctx, req.(*IncreaseStockRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_DecreaseStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _BookService_DecreaseStock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DecreaseStockRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).DecreaseStock(ctx, in)
+		return srv.(BookServiceServer).DecreaseStock(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_DecreaseStock_FullMethodName,
+		FullMethod: BookService_DecreaseStock_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).DecreaseStock(ctx, req.(*DecreaseStockRequest))
+		return srv.(BookServiceServer).DecreaseStock(ctx, req.(*DecreaseStockRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
+// BookService_ServiceDesc is the grpc.ServiceDesc for BookService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var UserService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "book.book.UserService",
-	HandlerType: (*UserServiceServer)(nil),
+var BookService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "book.book.BookService",
+	HandlerType: (*BookServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "ValidateStock",
-			Handler:    _UserService_ValidateStock_Handler,
+			Handler:    _BookService_ValidateStock_Handler,
 		},
 		{
 			MethodName: "IncreaseStock",
-			Handler:    _UserService_IncreaseStock_Handler,
+			Handler:    _BookService_IncreaseStock_Handler,
 		},
 		{
 			MethodName: "DecreaseStock",
-			Handler:    _UserService_DecreaseStock_Handler,
+			Handler:    _BookService_DecreaseStock_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

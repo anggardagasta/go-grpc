@@ -302,7 +302,7 @@ const file_module_book_book_book_proto_rawDesc = "" +
 	"\abook_id\x18\x01 \x01(\tR\x06bookId\"-\n" +
 	"\x15DecreaseStockResponse\x12\x14\n" +
 	"\x05stock\x18\x01 \x01(\tR\x05stock2\x89\x02\n" +
-	"\vUserService\x12R\n" +
+	"\vBookService\x12R\n" +
 	"\rValidateStock\x12\x1f.book.book.ValidateStockRequest\x1a .book.book.ValidateStockResponse\x12R\n" +
 	"\rIncreaseStock\x12\x1f.book.book.IncreaseStockRequest\x1a .book.book.IncreaseStockResponse\x12R\n" +
 	"\rDecreaseStock\x12\x1f.book.book.DecreaseStockRequest\x1a .book.book.DecreaseStockResponseBCZAgithub.com/anggardagasta/go-grpc/proto/syn-book-service/book;bookb\x06proto3"
@@ -329,12 +329,12 @@ var file_module_book_book_book_proto_goTypes = []any{
 	(*DecreaseStockResponse)(nil), // 5: book.book.DecreaseStockResponse
 }
 var file_module_book_book_book_proto_depIdxs = []int32{
-	0, // 0: book.book.UserService.ValidateStock:input_type -> book.book.ValidateStockRequest
-	2, // 1: book.book.UserService.IncreaseStock:input_type -> book.book.IncreaseStockRequest
-	4, // 2: book.book.UserService.DecreaseStock:input_type -> book.book.DecreaseStockRequest
-	1, // 3: book.book.UserService.ValidateStock:output_type -> book.book.ValidateStockResponse
-	3, // 4: book.book.UserService.IncreaseStock:output_type -> book.book.IncreaseStockResponse
-	5, // 5: book.book.UserService.DecreaseStock:output_type -> book.book.DecreaseStockResponse
+	0, // 0: book.book.BookService.ValidateStock:input_type -> book.book.ValidateStockRequest
+	2, // 1: book.book.BookService.IncreaseStock:input_type -> book.book.IncreaseStockRequest
+	4, // 2: book.book.BookService.DecreaseStock:input_type -> book.book.DecreaseStockRequest
+	1, // 3: book.book.BookService.ValidateStock:output_type -> book.book.ValidateStockResponse
+	3, // 4: book.book.BookService.IncreaseStock:output_type -> book.book.IncreaseStockResponse
+	5, // 5: book.book.BookService.DecreaseStock:output_type -> book.book.DecreaseStockResponse
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
