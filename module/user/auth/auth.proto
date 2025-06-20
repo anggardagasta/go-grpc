@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user.auth;
 
-option go_package = "go-grpc/proto/user-service/user;auth";
+option go_package = "github.com/anggardagasta/go-grpc/proto/syn-user-service/user;auth";
 
 message ValidateAccessTokenRequest {
   string access_token = 1;

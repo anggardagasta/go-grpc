@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user.user;
 
-option go_package = "go-grpc/proto/user-service/user;user";
+option go_package = "github.com/anggardagasta/go-grpc/proto/syn-user-service/user;user";
 
 message FindUserRequest {
   string user_id = 1;

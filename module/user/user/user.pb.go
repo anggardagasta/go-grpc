@@ -155,7 +155,7 @@ const file_module_user_user_user_proto_rawDesc = "" +
 	"\x05phone\x18\x04 \x01(\tR\x05phone\x12\x12\n" +
 	"\x04name\x18\x05 \x01(\tR\x04name2R\n" +
 	"\vUserService\x12C\n" +
-	"\bFindUser\x12\x1a.user.user.FindUserRequest\x1a\x1b.user.user.FindUserResponseB&Z$go-grpc/proto/user-service/user;userb\x06proto3"
+	"\bFindUser\x12\x1a.user.user.FindUserRequest\x1a\x1b.user.user.FindUserResponseBCZAgithub.com/anggardagasta/go-grpc/proto/syn-user-service/user;userb\x06proto3"
 
 var (
 	file_module_user_user_user_proto_rawDescOnce sync.Once

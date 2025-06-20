@@ -155,7 +155,7 @@ const file_module_user_auth_auth_proto_rawDesc = "" +
 	"\x05phone\x18\x04 \x01(\tR\x05phone\x12\x12\n" +
 	"\x04name\x18\x05 \x01(\tR\x04name2s\n" +
 	"\vAuthService\x12d\n" +
-	"\x13ValidateAccessToken\x12%.user.auth.ValidateAccessTokenRequest\x1a&.user.auth.ValidateAccessTokenResponseB&Z$go-grpc/proto/user-service/user;authb\x06proto3"
+	"\x13ValidateAccessToken\x12%.user.auth.ValidateAccessTokenRequest\x1a&.user.auth.ValidateAccessTokenResponseBCZAgithub.com/anggardagasta/go-grpc/proto/syn-user-service/user;authb\x06proto3"
 
 var (
 	file_module_user_auth_auth_proto_rawDescOnce sync.Once
