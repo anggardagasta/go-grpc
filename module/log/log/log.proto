@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package log.log;
+
+option go_package = "github.com/anggardagasta/go-grpc/proto/syn-log-service/log;log";
+
+message CreateLogRequest {
+  string service_name = 1;
+  string level = 2;
+  string message = 3;
+  map<string, string> metadata = 4;
+}
+
+message CreateLogResponse {
+  string id = 1;
+  string created_at = 2;
+}
+
+// RPC interface
+service LogService {
+  rpc CreateLog(CreateLogRequest) returns (CreateLogResponse);
+}
